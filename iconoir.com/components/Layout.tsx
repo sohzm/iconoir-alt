@@ -6,7 +6,7 @@ import { GA } from './GA';
 const Container = styled.div`
   padding: 50px 30px;
   ${media.lg} {
-    padding: 30px 50px 50px 50px;
+    padding: 0px 50px 50px 50px;
   }
 `;
 

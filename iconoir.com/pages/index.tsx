@@ -134,93 +134,6 @@ const Home: NextPage<HomeProps> = ({
         <SEO
           description="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons available in SVG, Font, React, React Nativ, and Flutter libraries, Figma and Framer."
         />
-        <Header currentVersion={currentVersion} />
-        <HeaderBackground>
-          <HeroHead>
-            <HeroText>Say hello</HeroText>
-            <HeroTextSecondary>
-              to your new free icon library.
-            </HeroTextSecondary>
-          </HeroHead>
-        </HeaderBackground>
-        <HeroDescription>
-          A high-quality selection of free icons. Your new alternative to Noun
-          Project, Flaticon, and all Figma resources. Available in SVG, Font,
-          React, React Native, Flutter, Figma and Framer.
-        </HeroDescription>
-        <StatsContainer>
-          <Stat
-            value={new Intl.NumberFormat('en-US').format(allIcons.length)}
-            description="icons available in this very moment, and they’re growing fast!"
-          />
-          <Stat
-            value="100%"
-            description="free icons. Iconoir is open source and we’re ready for your help."
-          />
-          <Stat
-            value={new Intl.NumberFormat('en-US', {
-              notation: 'compact',
-            }).format(numDownloads)}
-            description="downloads/month on React only. Iconoir also supports React Native, Flutter and CSS."
-          />
-          <Stat
-            value={new Intl.NumberFormat('en-US', {
-              notation: 'compact',
-            }).format(numStars)}
-            description="people who starred the project on GitHub. Show your support and be one of them."
-          />
-        </StatsContainer>
-        <AvailableFor />
-        <SupportContainer>
-          <LargeButton
-            as="a"
-            href={SUPPORT_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>Donate</span>
-          </LargeButton>
-          <Supporters>
-            <Supporter
-              data-tooltip="Pierre Olivier Marec"
-              as="a"
-              href="https://github.com/pomarec"
-              rel="noopener sponsored"
-              src="https://avatars.githubusercontent.com/u/802933?v=4"
-            />
-            <Supporter
-              data-tooltip="Tuan Hiep"
-              as="a"
-              href="https://opencollective.com/iconoir/contribute"
-              rel="noopener sponsored"
-              src="https://images.opencollective.com/tuan-hiep/17b1ef2/avatar.png?height=80"
-            />
-            <Supporter
-              data-tooltip="Justin Kendrick"
-              as="a"
-              href="https://opencollective.com/iconoir/contribute"
-              rel="noopener sponsored"
-              src="https://images.opencollective.com/guest-39c79745/avatar.png?height=80"
-            />
-            <Supporter
-              data-tooltip="Anon"
-              as="a"
-              href="https://opencollective.com/iconoir/contribute"
-              rel="noopener sponsored"
-              src="https://opencollective.com/static/images/default-guest-logo.svg"
-            />
-            <Supporter
-              data-tooltip="Luca Burgio"
-              as="a"
-              href="https://twitter.com/burgioluca"
-              rel="noopener sponsored"
-              src="https://lucaburgio.com/images/profile2.png"
-            />
-          </Supporters>
-          <Text15>
-            Join our supporters and help us continue developing Iconoir.
-          </Text15>
-        </SupportContainer>
         <Explore allIcons={allIcons} />
       </Layout>
       <Footer />
@@ -239,16 +152,18 @@ export async function getStaticProps() {
     ...REPO,
   });
 
-  if (!numStars)
-    throw new Error('Could not find GitHub stars');
+  // if (!numStars)
+  //   throw new Error('Could not find GitHub stars');
+  // noooo wtf ???
 
   const { downloads: numDownloads } = await npmDownloads(
     'iconoir-react',
     'last-month',
   );
 
-  if (!numDownloads)
-    throw new Error('Could not find NPM downloads');
+  // if (!numDownloads)
+  //   throw new Error('Could not find NPM downloads');
+  // again no
 
   return {
     props: {

@@ -127,7 +127,6 @@ const IconListContext = React.createContext<IconListContextValue | undefined>(un
 
 const Container = styled.div`
   width: 100%;
-  margin-top: -${HEADER_TOP_PADDING}px;
   > :first-child {
     overflow: visible !important;
     > :first-child {

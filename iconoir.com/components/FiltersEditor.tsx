@@ -15,6 +15,14 @@ export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
   // field to the top of the page automatically.
   const didScrollRef = React.useRef(false);
 
+  const inputRef = React.useRef<HTMLInputElement>(null);
+  React.useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
+
   React.useEffect(() => {
     const scrollEvent = () => {
       didScrollRef.current = true;
@@ -43,6 +51,7 @@ export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
 
   return (
     <LargeInput
+      ref={inputRef}
       placeholder="Search..."
       value={search}
       type="search"
